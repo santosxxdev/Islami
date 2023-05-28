@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islami/SuraArgs.dart';
 import 'package:islami/read_quran.dart';
+import 'package:islami/theme_mode.dart';
 
 class QuranScreen extends StatelessWidget {
   List<String> suraName = [
@@ -128,7 +129,7 @@ class QuranScreen extends StatelessWidget {
           Image.asset('assets/images/qur2an_screen_logo.png'),
           Divider(
             thickness: 2,
-            color: Color(0xFFB7935F),
+            color: ThemeStyle.lightTheme.primaryColor,
           ),
           Text(
             'Sura Name',
@@ -136,7 +137,7 @@ class QuranScreen extends StatelessWidget {
           ),
           Divider(
             thickness: 2,
-            color: Color(0xFFB7935F),
+            color: ThemeStyle.lightTheme.primaryColor,
           ),
           Expanded(
             child: ListView.separated(
