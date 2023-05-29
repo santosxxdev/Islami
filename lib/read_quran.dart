@@ -8,13 +8,23 @@ class ReadQuran extends StatelessWidget {
   Widget build(BuildContext context) {
     SuraArgs suraArgs = ModalRoute.of(context)?.settings.arguments as SuraArgs;
 
-    return Scaffold(
-      appBar: AppBar(
-          title: Text(
-        suraArgs.NameSura,
-        style: Theme.of(context).textTheme.bodyMedium,
-      )),
-      body: Container(),
+    return Stack(
+      children: [
+        SizedBox(
+            width: double.infinity,
+            child: Image.asset(
+              'assets/images/default_bg.png',
+              fit: BoxFit.fill,
+            )),
+        Scaffold(
+          appBar: AppBar(
+              title: Text(
+            suraArgs.NameSura,
+            style: Theme.of(context).textTheme.bodyMedium,
+          )),
+          body: Container(),
+        ),
+      ],
     );
   }
 }
