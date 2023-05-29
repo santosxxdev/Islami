@@ -133,7 +133,7 @@ class QuranScreen extends StatelessWidget {
           ),
           Text(
             'Sura Name',
-            style: Theme.of(context).textTheme.bodyMedium,
+            style: Theme.of(context).textTheme.bodyLarge,
           ),
           Divider(
             thickness: 2,
