@@ -14,10 +14,10 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   int index = 0;
   List<Widget> taps = [
-    RadioScreen(),
+    QuranScreen(),
     SebhaScreen(),
     HadethScreen(),
-    QuranScreen()
+    RadioScreen(),
   ];
 
   @override
@@ -42,8 +42,8 @@ class _HomeState extends State<Home> {
           currentIndex: index,
           items: [
             BottomNavigationBarItem(
-                icon: ImageIcon(AssetImage("assets/images/icon_radio.png")),
-                label: 'radio',
+                icon: ImageIcon(AssetImage("assets/images/icon_quran.png")),
+                label: 'quran',
                 backgroundColor: Theme.of(context).backgroundColor),
             BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage("assets/images/icon_sebha.png")),
@@ -54,8 +54,8 @@ class _HomeState extends State<Home> {
                 label: 'hadeth',
                 backgroundColor: Theme.of(context).backgroundColor),
             BottomNavigationBarItem(
-                icon: ImageIcon(AssetImage("assets/images/icon_quran.png")),
-                label: 'quran',
+                icon: ImageIcon(AssetImage("assets/images/icon_radio.png")),
+                label: 'radio',
                 backgroundColor: Theme.of(context).backgroundColor),
           ],
           onTap: (value) {
