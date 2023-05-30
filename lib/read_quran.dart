@@ -20,9 +20,8 @@ class ReadQuran extends StatelessWidget {
           appBar: AppBar(
               title: Text(
             suraArgs.NameSura,
-            style: Theme.of(context).textTheme.bodyMedium,
+            style: Theme.of(context).textTheme.bodyLarge,
           )),
-          body: Container(),
         ),
       ],
     );
