@@ -43,20 +43,16 @@ class _HomeState extends State<Home> {
           items: [
             BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage("assets/images/icon_quran.png")),
-                label: 'quran',
-                backgroundColor: Theme.of(context).backgroundColor),
+                label: 'quran'),
             BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage("assets/images/icon_sebha.png")),
-                label: 'sebha',
-                backgroundColor: Theme.of(context).backgroundColor),
+                label: 'sebha'),
             BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage("assets/images/icon_hadeth.png")),
-                label: 'hadeth',
-                backgroundColor: Theme.of(context).backgroundColor),
+                label: 'hadeth'),
             BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage("assets/images/icon_radio.png")),
-                label: 'radio',
-                backgroundColor: Theme.of(context).backgroundColor),
+                label: 'radio'),
           ],
           onTap: (value) {
             index = value;
