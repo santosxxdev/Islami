@@ -142,6 +142,7 @@ class QuranScreen extends StatelessWidget {
           Expanded(
             child: ListView.separated(
               separatorBuilder: (context, index) => Divider(
+                color: Theme.of(context).primaryColor,
                 thickness: 1,
                 endIndent: 35,
                 indent: 35,
@@ -154,7 +155,10 @@ class QuranScreen extends StatelessWidget {
                             arguments: SuraArgs(
                                 NameSura: suraName[index], index: index += 1));
                       },
-                      child: Text(suraName[index])),
+                      child: Text(
+                        suraName[index],
+                        style: Theme.of(context).textTheme.bodyMedium,
+                      )),
                 );
               },
               itemCount: suraName.length,
