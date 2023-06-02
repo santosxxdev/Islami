@@ -55,8 +55,8 @@ class _ReadQuranState extends State<ReadQuran> {
 
   Future<void> loadQuran(int index) async {
     String sura = await rootBundle.loadString("assets/files/${index + 1}.txt");
-
     List<String> lines = sura.split("\n");
+
     print(lines);
     verses = lines;
 
