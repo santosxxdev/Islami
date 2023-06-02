@@ -153,7 +153,7 @@ class QuranScreen extends StatelessWidget {
                       onTap: () {
                         Navigator.pushNamed(context, ReadQuran.routeName,
                             arguments: SuraArgs(
-                                NameSura: suraName[index], index: index += 1));
+                                NameSura: suraName[index], index: index));
                       },
                       child: Text(
                         suraName[index],
