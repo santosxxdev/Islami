@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:islami/SuraArgs.dart';
 import 'package:islami/theme_mode.dart';
 
@@ -17,7 +18,7 @@ class _ReadQuranState extends State<ReadQuran> {
   Widget build(BuildContext context) {
     SuraArgs suraArgs = ModalRoute.of(context)?.settings.arguments as SuraArgs;
     if (verses.isEmpty) {
-      loadQuran(suraArgs.index);
+      loadSura(suraArgs.index);
     }
     return Stack(
       children: [
@@ -36,14 +37,25 @@ class _ReadQuranState extends State<ReadQuran> {
           body: verses.isEmpty
               ? Center(child: CircularProgressIndicator())
               : Card(
-                  elevation: 12,
+            elevation: 12,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(16),
                       side: BorderSide(color: ThemeStyle.lightColor)),
                   margin: EdgeInsets.symmetric(vertical: 28, horizontal: 16),
-                  child: ListView.builder(
+                  child: ListView.separated(
+                    separatorBuilder: (context, index) => Divider(
+                      thickness: 1,
+                      color: Theme.of(context).primaryColor,
+                      indent: 42,
+                      endIndent: 42,
+                    ),
                     itemBuilder: (context, index) {
-                      return Text(verses[index]);
+                      return Text(
+                        verses[index],
+                        textAlign: TextAlign.center,
+                        style: GoogleFonts.elMessiri(
+                            fontSize: 18, color: Colors.black54),
+                      );
                     },
                     itemCount: verses.length,
                   ),
@@ -53,13 +65,11 @@ class _ReadQuranState extends State<ReadQuran> {
     );
   }
 
-  Future<void> loadQuran(int index) async {
+  Future<void> loadSura(int index) async {
     String sura = await rootBundle.loadString("assets/files/${index + 1}.txt");
     List<String> lines = sura.split("\n");
-
     print(lines);
     verses = lines;
-
     setState(() {});
   }
 }
