@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islami/read_hadeth.dart';
 import 'package:islami/read_quran.dart';
 import 'package:islami/theme_mode.dart';
 
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget {
       routes: {
         Home.routeName: (context) => Home(),
         ReadQuran.routeName: (context) => ReadQuran(),
+        ReadAhadeth.routeName: (context) => ReadAhadeth(),
       },
       initialRoute: Home.routeName,
     );
